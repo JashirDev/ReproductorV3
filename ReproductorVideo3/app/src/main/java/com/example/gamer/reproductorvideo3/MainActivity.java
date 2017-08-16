@@ -28,8 +28,11 @@ public class MainActivity extends AppCompatActivity {
     private void caragrdatos(){
         //creando las listas de categorias
         ArrayList<ContenidoLista> listavideos= new ArrayList<>();
-        listacategoria.add("yotube");
-        // listacategoria.add("vimeo");
+        ArrayList<ContenidoLista> listavideosnoticia= new ArrayList<>();
+        ArrayList<ContenidoLista> listavideosdeporte= new ArrayList<>();
+        listacategoria.add("Musica");
+        listacategoria.add("Noticias");
+        listacategoria.add("Deportes");
 
 
         listavideos.add(new ContenidoLista("VIDEO 1 "
@@ -42,8 +45,31 @@ public class MainActivity extends AppCompatActivity {
                 , "https://i.ytimg.com/vi/Fp5_Ezoj60U/hqdefault.jpg"
                 ,"Fp5_Ezoj60U"));
 
+        listavideosnoticia.add(new ContenidoLista("VIDEO 1"
+                ,"http://tv.milenio.com/milenio_noticias/donald_trump-rechazo-ataques-racistas-virginia-milenio-noticias_MILVID20170815_0017_10.jpg"
+                ,"Q1zv6iiBNcQ"));
+        listavideosnoticia.add(new ContenidoLista("VIDEO 2"
+                ,"http://eleconomista.com.mx/files/imagecache/Soft/emvideo-youtube-APwZa9T6hP8_0.jpg"
+                ,"APwZa9T6hP8"));
+        listavideosnoticia.add(new ContenidoLista("VIDEO 3"
+                ,"http://p-gruporpp-media.s3.amazonaws.com/2016/08/15/18669-piscoinforme-219552mp4_219553.png"
+                ,"sKDYJTP_Ik8"));
+
+
+        listavideosdeporte.add(new ContenidoLista("VIDEO 1"
+                ,"https://media.metrolatam.com/2017/08/15/resultadopartidohoffenheimliverpoolpreviachampionsleague-1200x600.jpg"
+                ,"m-mnx0YVDgU"));
+        listavideosdeporte.add(new ContenidoLista("VIDEO 1"
+                ,"https://i.ytimg.com/vi/P1Vb70mTDnU/maxresdefault.jpg"
+                ,"y-ROoLQ5CuI"));
+        listavideosdeporte.add(new ContenidoLista("VIDEO 1"
+                ,"https://i.ytimg.com/vi/HL8yozeXaHg/maxresdefault.jpg"
+                ,"HL8yozeXaHg"));
+
 
         mapchild.put(listacategoria.get(0),listavideos);
+        mapchild.put(listacategoria.get(1),listavideosnoticia);
+        mapchild.put(listacategoria.get(2),listavideosdeporte);
 
 
 

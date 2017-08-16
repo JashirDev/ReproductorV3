@@ -28,6 +28,7 @@ public class Youtube extends YouTubeBaseActivity implements YouTubePlayer.OnInit
             url= i.getStringExtra("videourl");
            // Toast.makeText(this, "ulr"+ url, Toast.LENGTH_SHORT).show();
         }
+        //tiempovideo=savedInstanceState.getInt("tiempodelvideo");
 
         youTubePlayerView=(YouTubePlayerView)findViewById(R.id.yotube_view);
 
@@ -37,6 +38,7 @@ public class Youtube extends YouTubeBaseActivity implements YouTubePlayer.OnInit
     @Override
     protected void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
+        tiempovideo= player.getCurrentTimeMillis();
         bundle.putInt("tiempodelvideo",tiempovideo);
     }
 
@@ -51,7 +53,12 @@ public class Youtube extends YouTubeBaseActivity implements YouTubePlayer.OnInit
         player= youTubePlayer;
 
         if(!restaurado){
-            player.loadVideo(url);
+            if (tiempovideo==0){
+                player.loadVideo(url);
+            }else{
+                player.loadVideo(url,tiempovideo);
+            }
+
             player.setPlayerStyle(YouTubePlayer.PlayerStyle.MINIMAL);
             player.setPlaybackEventListener(new YouTubePlayer.PlaybackEventListener() {
                 @Override
